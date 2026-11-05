@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Portfolio | Montage vidéo et tournage</title>
+<style>
+:root{--bg:#f6f4f0;--card:#fff;--text:#16161a;--muted:#6b6b76;--accent:#d6452b;--line:#e4e1da;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f0f12;--card:#1a1a20;--text:#f2f0ec;--muted:#9a9aa6;--accent:#ff6a4d;--line:#2b2b33}}
+:root[data-theme="dark"]{--bg:#0f0f12;--card:#1a1a20;--text:#f2f0ec;--muted:#9a9aa6;--accent:#ff6a4d;--line:#2b2b33}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;line-height:1.6}
+.wrap{max-width:960px;margin:0 auto;padding:48px 20px 56px}
+h1{font-size:clamp(2.2rem,7vw,3.6rem);font-weight:800;margin:0 0 6px;letter-spacing:-1px}
+.sub{color:var(--muted);margin:0 0 36px;font-size:1.05rem}
+.bar{width:56px;height:4px;background:var(--accent);border-radius:2px;margin:0 0 20px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px}
+a.card{display:flex;align-items:center;gap:14px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;text-decoration:none;color:inherit;transition:transform .15s,border-color .15s}
+a.card:hover,a.card:focus-visible{transform:translateY(-2px);border-color:var(--accent);outline:none}
+.play{flex:none;width:44px;height:44px;border-radius:50%;background:var(--accent);display:grid;place-items:center}
+.play svg{width:18px;height:18px;fill:#fff;margin-left:2px}
+.t{font-weight:600}
+.n{color:var(--muted);font-size:.85rem}
+footer{margin-top:40px;color:var(--muted);font-size:.85rem}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="bar"></div>
+<h1>Portfolio</h1>
+<p class="sub">Montage vidéo et tournage · Cliquez sur un projet pour regarder la vidéo</p>
+<div class="grid" id="grid"></div>
+<footer>Les vidéos s’ouvrent dans un nouvel onglet.</footer>
+</div>
+<script>
+var ids=["81b8co","hs7sa0","abid5b","eyq8rx","1q8996","sme66w","2pfno3","ti77qb","qbf5mm","vu9rg4","z51nem","v5cpyz"];
+var g=document.getElementById("grid");
+ids.forEach(function(id,i){
+var a=document.createElement("a");
+a.className="card";a.href="https://streamable.com/"+id;a.target="_blank";a.rel="noopener";
+a.innerHTML='<span class="play"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></span><span><div class="t">Projet '+(i+1)+'</div><div class="n">Voir la vidéo</div></span>';
+g.appendChild(a);
+});
+</script>
+</body>
+</html>
